@@ -1,0 +1,73 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+section {
+  border-radius: 25px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+}
+
+main {
+  border-radius: 25px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5%;
+  position: relative;
+  
+  /* grid settings */  
+  display: grid;
+  column-count: 2;
+  column-gap: 25px;
+  row-gap: 10px;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr;
+}
+
+#profile {
+  grid-column: 1;
+}
+
+#details {
+  grid-column: 2;
+}
+
+#recommendations{
+  grid-column: 2;
+}
+
+#parameters {
+  grid-column: 1;
+  display: grid;
+  column-gap: 10px;
+  column-count: 2;
+  row-gap: 10px;
+  grid-auto-flow: column;
+}
+
+#parameters > h2{
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  text-align: center;
+}
+
+#parameters > label{
+  grid-column: 1;
+}
+
+#parameters > input {
+  grid-column: 2;
+}
+
+footer {
+  text-align: center;
+  background-color: #DDD;
+}
