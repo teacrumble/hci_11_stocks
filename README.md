@@ -7,6 +7,9 @@
 - sqlite3
 
 ## Running
+HOW: install php (apt-get install php voor Linux)
+
+commandline in folder van het project: php -S localhost:8000
 
 Each time this example is run, a sqlite3 database is created or appended to. A single message is appended and all records are retrieved and rendered on the page.
 
