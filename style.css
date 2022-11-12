@@ -1,9 +1,42 @@
-html, body {
-  height: 100%;
-  width: 100%;
+html{
   font-family: monospace;
+  background: rgb(4,3,3);
+  background: linear-gradient(146deg, #0b333b 0%, rgba(84,192,145,1) 48%, rgba(255,255,255,1) 100%); 
+  color: #0b333b;
+  height: 100%;
 }
 
+/*RANGE THUMB*/
+input[type=range]::-ms-thumb{
+  border: 2px solid black;
+  background-color: red;
+}
+input[type=range]::-moz-range-thumb{
+  border: 2px solid black;
+  background-color: red;
+}
+input[type=range]::-webkit-slider-thumb {
+  border: 2px solid black;
+  background-color: red;
+}
+
+
+/*RANGE TRACK*/
+input[type=range]::-moz-range-track{
+  border: 2px solid black;
+}
+
+input[type=”range”]::-ms-track{
+  border: 2px solid black;
+}
+
+input[type=”range”]::-webkit-slider-runnable-track{
+  border: 2px solid black;
+}
+
+
+
+/*MAIN STRUCTURE*/
 h1 {
   text-align: center;
 }
@@ -20,8 +53,9 @@ main {
   border-radius: 25px;
   border: 1px solid black;
   padding: 10px;
-  margin: 5%;
+  margin: 2% 5%;
   position: relative;
+  background: rgba(255, 255, 255, 0.7);
   
   /* grid settings */  
   display: grid;
@@ -32,8 +66,47 @@ main {
   grid-template-columns: 1fr 1fr;
 }
 
+.sleep {
+  display: none;
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+/*PROFILE SECTION*/
 #profile {
   grid-column: 1;
+}
+
+/*classes for fun colors*/
+.very_bad{
+  color: crimson;
+}
+
+.bad{
+  color: coral;
+}
+
+.neutral{
+  color: yellow;
+}
+
+.good{
+  color: yellowgreen;
+}
+
+.very_good{
+  color: green;
+}
+
+th, td {
+  border: solid black;
+  border-width: 0 1px;
+  padding: 10px;
+  text-align: center;
 }
 
 #details {
@@ -44,6 +117,10 @@ main {
   grid-column: 2;
 }
 
+
+
+
+/*PARAMETERS*/
 #parameters {
   grid-column: 1;
   display: grid;
@@ -67,7 +144,18 @@ main {
   grid-column: 2;
 }
 
+
+
+
+/*FOOTER*/
+
 footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 98vw;
+  padding: 1vw;
+  font-size: larger;
   text-align: center;
   background-color: #DDD;
 }
