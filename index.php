@@ -37,7 +37,7 @@ include("stocks.php");
       ON EASY NOT VISIBLE, 
       ON MEDIUM ONLY CHECKBOXES, 
       ON HARD CHECKBOXES AND SLIDERS  -->
-      <section id='parameters' class='sleep'>
+      <section id='parameters' class=''>
         <h2>Parameter preference weights</h2>
         <label for='i_region'>
           <input type='checkbox' id='select_region'>
@@ -67,7 +67,7 @@ include("stocks.php");
 
 
       <!-- RECOMMENDATION SECTION: SHOWS THE RECOMMENDATIONS -->
-      <section id='recommendations' class='sleep'>
+      <section id='recommendations' class=''>
         <table>
           <?php
           $sets = new Settings(2, ['lol'=>2, 'esg'=>3]);

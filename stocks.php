@@ -71,7 +71,10 @@ function loadStocks(int $profile){
           
         $first = true;
         $stocks = $db->query("SELECT name, sectors, course_difference_6M as \"course (6 Mo)\", esg, country, continent FROM stocks ORDER BY id ASC");
+        
+        //add all rows in returned by the query
         while($row = $stocks->fetch(\PDO::FETCH_ASSOC)){
+          //add row header
           if ($first){
             echo '<thead> <tr>';
             echo '<th> </th>';
@@ -83,11 +86,15 @@ function loadStocks(int $profile){
             $first = false;
           }
 
+          //start row, add checkbox for selection
           echo '<tr>';
           echo '<td><input type="checkbox"/></td>';
+          
+          //add row cell for every property
           foreach($row as $key=>$value){
             $col = '';
             $postfix = '';
+            //run this when at the course column
             if ($key == "course (6 Mo)"){
                 $postfix = '%';
                 if($value > 25){
@@ -103,6 +110,7 @@ function loadStocks(int $profile){
                     $col = 'bad';
                 }
             }
+            //run this when at the esg column
             else if($key == "esg"){
                 if($value <= 10){
                     $col = 'very_good';
@@ -120,6 +128,7 @@ function loadStocks(int $profile){
                     $col = 'very_bad';
                 }
             }
+            //return column cell with certain class when needed (for css color styling)
             echo "<td class=\"$col\"> $value $postfix</td>";
           }
           echo '</tr>';

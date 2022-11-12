@@ -6,6 +6,11 @@ html{
   height: 100%;
 }
 
+
+input[type=range]{
+  background-color: transparent;
+}
+
 /*RANGE THUMB*/
 input[type=range]::-ms-thumb{
   border: 2px solid black;
