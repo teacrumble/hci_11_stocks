@@ -33,7 +33,7 @@ try {
   $stmt->bindValue(':course_diff', -40.9, SQLITE3_FLOAT);
   $stmt->bindValue(':esg', 34.5, SQLITE3_FLOAT);
   $stmt->bindValue(':country', 'USA', SQLITE3_TEXT);
-  $stmt->bindValue(':continent', 'NA', SQLITE3_TEXT);
+  $stmt->bindValue(':continent', 'North America', SQLITE3_TEXT);
   
   // Format unix time to timestamp
   //$formatted_time = date('Y-m-d H:i:s');
@@ -42,7 +42,29 @@ try {
   // Execute statement
   $stmt->execute();
   //----------------------------------------------------------
+  //----------------------------------------------------------
 
+  //set query with variables
+  $stmt = $db->prepare(
+    "INSERT INTO stocks (name, sectors, course_difference_6M, esg, country, continent) 
+      VALUES (:name, :sector, :course_diff, :esg, :country, :continent)"
+  );
+  
+  // Bind values directly to statement variables
+  $stmt->bindValue(':name', 'GameStop', SQLITE3_TEXT);
+  $stmt->bindValue(':sector', 'Retail', SQLITE3_TEXT);
+  $stmt->bindValue(':course_diff', ' ∞', SQLITE3_TEXT);
+  $stmt->bindValue(':esg', 25, SQLITE3_FLOAT);
+  $stmt->bindValue(':country', 'USA', SQLITE3_TEXT);
+  $stmt->bindValue(':continent', 'North America', SQLITE3_TEXT);
+  
+  // Format unix time to timestamp
+  //$formatted_time = date('Y-m-d H:i:s');
+  //$stmt->bindValue(':time', $formatted_time, SQLITE3_TEXT);
+   
+  // Execute statement
+  $stmt->execute();
+  //----------------------------------------------------------
   
   // Garbage collect db
   $db = null;

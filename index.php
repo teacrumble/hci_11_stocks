@@ -9,15 +9,21 @@ include("stocks.php");
     <meta name="viewport" content="width=device-width">
     <title>stockmaster</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
   </head>
   <body>
   <div class='container'>
     <h1>Stockmaster 4000</h1>
     <main>
-
+      <div id="pager">
+        <label for="page1" >
+          <input type="radio" name="page" value="1" id="page1" checked> stock selection
+        </label>
+        <label for="page2" >
+          <input type="radio" name="page" value="2" id="page2"> parameters & recommendations
+        </label>
+      </div>
       <!-- PORTFOLIO SECTION: CHOOSE PROFILE AND SELECT STOCKS  -->
-      <section id='profile' class=''>
+      <section id='profile' class='p1'>
         <table>
             <?php
             loadStocks(1);
@@ -28,7 +34,7 @@ include("stocks.php");
 
 
       <!-- DETAILS SECTION: ON HOVER OF STOCK, SHOW MORE DETAILS ON ASSETS -->
-      <section id='details' class=''>
+      <section id='details' class='p1'>
 
       </section>
 
@@ -37,7 +43,7 @@ include("stocks.php");
       ON EASY NOT VISIBLE, 
       ON MEDIUM ONLY CHECKBOXES, 
       ON HARD CHECKBOXES AND SLIDERS  -->
-      <section id='parameters' class=''>
+      <section id='parameters' class='p2 sleep'>
         <h2>Parameter preference weights</h2>
         <label for='i_region'>
           <input type='checkbox' id='select_region'>
@@ -67,7 +73,7 @@ include("stocks.php");
 
 
       <!-- RECOMMENDATION SECTION: SHOWS THE RECOMMENDATIONS -->
-      <section id='recommendations' class=''>
+      <section id='recommendations' class='p2 sleep'>
         <table>
           <?php
           $sets = new Settings(2, ['lol'=>2, 'esg'=>3]);
@@ -82,6 +88,7 @@ include("stocks.php");
     </span>
   </div>
   <footer>
+    <script src="script.js"></script>
     This page was made by Group 11: Dries, Cas, Ruben, Jens &copy; rights reserved (?)
   </footer>
 </body>

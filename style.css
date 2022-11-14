@@ -1,9 +1,29 @@
 html{
   font-family: monospace;
-  background: rgb(4,3,3);
-  background: linear-gradient(146deg, #0b333b 0%, rgba(84,192,145,1) 48%, rgba(255,255,255,1) 100%); 
+  background-color: #e4ccaa73;
+  background-image: url(./bc.png);
+  background-size: 50px;
+  background-position: -25px -25px;
+  background-repeat: round;
   color: #0b333b;
   height: 100%;
+}
+
+#pager {
+  position: absolute;
+  right: 10px;
+  top: -50px;
+}
+
+#pager label:hover {
+  border-color:black;
+}
+
+#pager label{
+  border: 1px solid transparent;
+  display: block;
+  background-color: azure;
+  padding: 5px;
 }
 
 
@@ -49,18 +69,18 @@ h1 {
 
 section {
   border-radius: 25px;
-  border: 1px solid black;
+  border: 5px solid #026783;
+  background-color: white;
   padding: 10px;
   margin: 5px;
 }
 
 main {
   border-radius: 25px;
-  border: 1px solid black;
+  /*border: 1px solid black; */
   padding: 10px;
   margin: 2% 5%;
   position: relative;
-  background: rgba(255, 255, 255, 0.7);
   
   /* grid settings */  
   display: grid;
@@ -86,17 +106,21 @@ main {
   grid-column: 1;
 }
 
+#profile tbody tr:hover{
+  background-color: lightblue;
+}
+
 /*classes for fun colors*/
 .very_bad{
   color: crimson;
 }
 
 .bad{
-  color: coral;
+  color: tomato;
 }
 
 .neutral{
-  color: yellow;
+  color: goldenrod;
 }
 
 .good{
@@ -107,9 +131,18 @@ main {
   color: green;
 }
 
+
+table{
+  border-collapse: collapse;
+  display: table;
+}
+
+tr {
+  display: table-row;
+}
+
 th, td {
-  border: solid black;
-  border-width: 0 1px;
+  border: none;
   padding: 10px;
   text-align: center;
 }
